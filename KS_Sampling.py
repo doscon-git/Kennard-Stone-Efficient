@@ -1,3 +1,4 @@
+#%%
 import numpy as np
 import numpy.ma as ma
 import ctypes
@@ -6,18 +7,20 @@ import os.path as path
 from pathos.multiprocessing import ProcessingPool as Pool
 from sklearn.metrics import pairwise_distances
 
-
+#%%
 prog_dir = path.dirname(path.abspath(__file__))
 cpp_name = "ks_cpp"
-
+#%%
 if not os.path.isfile(prog_dir + "/" + cpp_name + ".so"):
-    current_dir = os.path.abspath(".")
+    current_dir = path.dirname(__file__)
     os.chdir(path.dirname(path.abspath(__file__)))
     os.system("gcc -fPIC  -fopenmp -O3 -shared -o" + cpp_name + ".so " + cpp_name + ".c")
     os.chdir(current_dir)
-ks_cpp = np.ctypeslib.load_library(cpp_name + ".so", prog_dir)
+#%%
 
+ks_cpp = np.ctypeslib.load_library(cpp_name + ".so",prog_dir)
 
+#%%
 def get_dist_unsafe(X):
     """
     This implementation of distance matrix is fast but unsafe.
