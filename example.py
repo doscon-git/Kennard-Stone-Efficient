@@ -1,5 +1,4 @@
 import os
-import path
 
 cpp_file = "ks_cpp.so"
 if os.path.exists(cpp_file):
