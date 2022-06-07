@@ -1,6 +1,9 @@
 import os
+import path
 
-os.system("rm ks_cpp.so")
+cpp_file = "ks_cpp.so"
+if os.path.exists(cpp_file):
+    os.remove(cpp_file)
 
 import numpy as np
 from KS_Sampling import ks_sampling, ks_sampling_mem
