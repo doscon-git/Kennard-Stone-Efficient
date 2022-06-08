@@ -63,6 +63,9 @@ The capacity and highlights of this implementation are:
 `KS_Sampling` uses ctype to achieve C-binding. Use this function if you can use `gcc` compiler.
 Higher version of `gcc` is prefered, since C program uses OpenMP/reduce.
 
+Note: There is currently no 64-bit version freely available for windows, so if you wish to run this on windows you have some work to do or you have to use a commercial python distribution.
+> https://www.codementor.io/@codementorteam/how-to-set-up-numpy-on-a-64-bit-windows-os-a3f7zyl56
+
 `KS_Sampling_pure_python` only uses Python language. That can be a lot slower, but can be used
 in any condition.
 
