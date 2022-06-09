@@ -93,3 +93,11 @@ from KS_Sampling import ks_sampling_mem
 # X.shape = (1000, 20)
 ks_result = ks_sampling_mem(X, n_result=800)
 ```
+
+
+## Docker implementation
+For those on windows and not able to get 64 numpy or a VM to run the program on a dockerfile has been created. The container runs the dockermain.py and goes through files in the dockerdata folder that are detailed in config.json.
+
+
+
+docker run -v %cd%/dockerdata:/kenny/data kenstone

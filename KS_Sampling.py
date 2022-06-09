@@ -17,8 +17,10 @@ if not os.path.isfile(prog_dir + "/" + cpp_name + ".so"):
     os.system("gcc -fPIC  -fopenmp -O3 -shared -o" + cpp_name + ".so " + cpp_name + ".c")
     os.chdir(current_dir)
 #%%
-
-ks_cpp = np.ctypeslib.load_library(cpp_name + ".so",prog_dir)
+try:
+    ks_cpp = np.ctypeslib.load_library(cpp_name + ".so",prog_dir)
+except Exception as e:
+    print(e)
 
 #%%
 def get_dist_unsafe(X):
