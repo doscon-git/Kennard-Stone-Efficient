@@ -1,3 +1,6 @@
+# If you are running on windows, ensure to enforce 32 bit python environment
+# https://stackoverflow.com/questions/33709391/using-multiple-python-engines-32bit-64bit-and-2-7-3-5
+python=3.9
 pathos
 numpy
 sklearn
