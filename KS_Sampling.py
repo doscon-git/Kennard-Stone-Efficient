@@ -14,6 +14,7 @@ cpp_name = "ks_cpp"
 if not os.path.isfile(prog_dir + "/" + cpp_name + ".so"):
     current_dir = path.dirname(__file__)
     os.chdir(path.dirname(path.abspath(__file__)))
+    # Compile with position independent code (PIC), paralell computing (fopenmp), optimization 3 (O3) and enable sharing (-shared)
     os.system("gcc -fPIC  -fopenmp -O3 -shared -o" + cpp_name + ".so " + cpp_name + ".c")
     os.chdir(current_dir)
 #%%
