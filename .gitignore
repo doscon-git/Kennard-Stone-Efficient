@@ -4,3 +4,7 @@ tmp*
 
 # Aleksander setting
 __pycache__
+example.c
+testing.py
+dockerdata/*.csv
+dockerdata/*.txt
